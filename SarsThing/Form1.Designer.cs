@@ -49,9 +49,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtResultBasePaye = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtResultRebate = new System.Windows.Forms.TextBox();
+            this.txtResultPrimaryRebate = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtResultMedicalRebate = new System.Windows.Forms.TextBox();
+            this.txtResultMedicalTaxCredit = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtResultEmployeeUif = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,6 +70,16 @@
             this.txtResultEarnings = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.chkBenefitsIncluded = new System.Windows.Forms.CheckBox();
+            this.txtResultTotalUif = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtResultSecondaryRebate = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtResultTertiaryRebate = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtResultPayeLessRebate = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtResultEmployerUif = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSalary
@@ -119,7 +129,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 195);
+            this.label3.Location = new System.Drawing.Point(12, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 26);
             this.label3.TabIndex = 5;
@@ -129,7 +139,7 @@
             // txtMedicalAid
             // 
             this.txtMedicalAid.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicalAid.Location = new System.Drawing.Point(315, 195);
+            this.txtMedicalAid.Location = new System.Drawing.Point(315, 152);
             this.txtMedicalAid.Name = "txtMedicalAid";
             this.txtMedicalAid.Size = new System.Drawing.Size(211, 26);
             this.txtMedicalAid.TabIndex = 4;
@@ -142,7 +152,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(12, 227);
+            this.label4.Location = new System.Drawing.Point(12, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(297, 26);
             this.label4.TabIndex = 7;
@@ -152,7 +162,7 @@
             // txtDependents
             // 
             this.txtDependents.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDependents.Location = new System.Drawing.Point(315, 227);
+            this.txtDependents.Location = new System.Drawing.Point(315, 184);
             this.txtDependents.Name = "txtDependents";
             this.txtDependents.Size = new System.Drawing.Size(211, 26);
             this.txtDependents.TabIndex = 6;
@@ -212,7 +222,8 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(12, 304);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(297, 26);
             this.label6.TabIndex = 12;
@@ -222,8 +233,8 @@
             // txtResultBasic
             // 
             this.txtResultBasic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultBasic.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBasic.Location = new System.Drawing.Point(315, 308);
+            this.txtResultBasic.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultBasic.Location = new System.Drawing.Point(315, 220);
             this.txtResultBasic.Name = "txtResultBasic";
             this.txtResultBasic.ReadOnly = true;
             this.txtResultBasic.Size = new System.Drawing.Size(211, 19);
@@ -233,7 +244,8 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(12, 401);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(297, 26);
             this.label7.TabIndex = 12;
@@ -243,8 +255,8 @@
             // txtResultMedical
             // 
             this.txtResultMedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultMedical.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultMedical.Location = new System.Drawing.Point(315, 405);
+            this.txtResultMedical.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultMedical.Location = new System.Drawing.Point(315, 321);
             this.txtResultMedical.Name = "txtResultMedical";
             this.txtResultMedical.ReadOnly = true;
             this.txtResultMedical.Size = new System.Drawing.Size(211, 19);
@@ -254,7 +266,8 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(12, 426);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 339);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(297, 26);
             this.label8.TabIndex = 12;
@@ -264,8 +277,8 @@
             // txtResultDependents
             // 
             this.txtResultDependents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultDependents.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultDependents.Location = new System.Drawing.Point(315, 430);
+            this.txtResultDependents.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultDependents.Location = new System.Drawing.Point(315, 346);
             this.txtResultDependents.Name = "txtResultDependents";
             this.txtResultDependents.ReadOnly = true;
             this.txtResultDependents.Size = new System.Drawing.Size(211, 19);
@@ -275,7 +288,7 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(12, 461);
+            this.label9.Location = new System.Drawing.Point(12, 392);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(297, 26);
             this.label9.TabIndex = 12;
@@ -286,7 +299,7 @@
             // 
             this.txtResultBasePaye.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultBasePaye.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBasePaye.Location = new System.Drawing.Point(315, 465);
+            this.txtResultBasePaye.Location = new System.Drawing.Point(315, 396);
             this.txtResultBasePaye.Name = "txtResultBasePaye";
             this.txtResultBasePaye.ReadOnly = true;
             this.txtResultBasePaye.Size = new System.Drawing.Size(211, 19);
@@ -296,49 +309,51 @@
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(12, 486);
+            this.label10.Location = new System.Drawing.Point(12, 418);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(297, 26);
             this.label10.TabIndex = 12;
             this.label10.Text = "Primary Rebate";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtResultRebate
+            // txtResultPrimaryRebate
             // 
-            this.txtResultRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultRebate.Location = new System.Drawing.Point(315, 490);
-            this.txtResultRebate.Name = "txtResultRebate";
-            this.txtResultRebate.ReadOnly = true;
-            this.txtResultRebate.Size = new System.Drawing.Size(211, 19);
-            this.txtResultRebate.TabIndex = 13;
-            this.txtResultRebate.Text = "0.00";
-            this.txtResultRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtResultPrimaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultPrimaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultPrimaryRebate.Location = new System.Drawing.Point(315, 422);
+            this.txtResultPrimaryRebate.Name = "txtResultPrimaryRebate";
+            this.txtResultPrimaryRebate.ReadOnly = true;
+            this.txtResultPrimaryRebate.Size = new System.Drawing.Size(211, 19);
+            this.txtResultPrimaryRebate.TabIndex = 13;
+            this.txtResultPrimaryRebate.Text = "0.00";
+            this.txtResultPrimaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(12, 511);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 522);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(297, 26);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Medical Rebate";
+            this.label11.Text = "Medical Aid Tax Credit";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtResultMedicalRebate
+            // txtResultMedicalTaxCredit
             // 
-            this.txtResultMedicalRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultMedicalRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultMedicalRebate.Location = new System.Drawing.Point(315, 515);
-            this.txtResultMedicalRebate.Name = "txtResultMedicalRebate";
-            this.txtResultMedicalRebate.ReadOnly = true;
-            this.txtResultMedicalRebate.Size = new System.Drawing.Size(211, 19);
-            this.txtResultMedicalRebate.TabIndex = 13;
-            this.txtResultMedicalRebate.Text = "0.00";
-            this.txtResultMedicalRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtResultMedicalTaxCredit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultMedicalTaxCredit.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultMedicalTaxCredit.Location = new System.Drawing.Point(315, 529);
+            this.txtResultMedicalTaxCredit.Name = "txtResultMedicalTaxCredit";
+            this.txtResultMedicalTaxCredit.ReadOnly = true;
+            this.txtResultMedicalTaxCredit.Size = new System.Drawing.Size(211, 19);
+            this.txtResultMedicalTaxCredit.TabIndex = 13;
+            this.txtResultMedicalTaxCredit.Text = "0.00";
+            this.txtResultMedicalTaxCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(12, 583);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 548);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(297, 26);
             this.label12.TabIndex = 12;
@@ -348,8 +363,8 @@
             // txtResultEmployeeUif
             // 
             this.txtResultEmployeeUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultEmployeeUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultEmployeeUif.Location = new System.Drawing.Point(315, 587);
+            this.txtResultEmployeeUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultEmployeeUif.Location = new System.Drawing.Point(315, 555);
             this.txtResultEmployeeUif.Name = "txtResultEmployeeUif";
             this.txtResultEmployeeUif.ReadOnly = true;
             this.txtResultEmployeeUif.Size = new System.Drawing.Size(211, 19);
@@ -359,7 +374,8 @@
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(12, 608);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 574);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(297, 26);
             this.label13.TabIndex = 12;
@@ -369,8 +385,8 @@
             // txtResultDeductions
             // 
             this.txtResultDeductions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultDeductions.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultDeductions.Location = new System.Drawing.Point(315, 612);
+            this.txtResultDeductions.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultDeductions.Location = new System.Drawing.Point(315, 581);
             this.txtResultDeductions.Name = "txtResultDeductions";
             this.txtResultDeductions.ReadOnly = true;
             this.txtResultDeductions.Size = new System.Drawing.Size(211, 19);
@@ -380,7 +396,8 @@
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(12, 648);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 610);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(297, 26);
             this.label14.TabIndex = 12;
@@ -390,8 +407,8 @@
             // txtResultPayout
             // 
             this.txtResultPayout.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultPayout.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultPayout.Location = new System.Drawing.Point(315, 652);
+            this.txtResultPayout.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultPayout.Location = new System.Drawing.Point(315, 617);
             this.txtResultPayout.Name = "txtResultPayout";
             this.txtResultPayout.ReadOnly = true;
             this.txtResultPayout.Size = new System.Drawing.Size(211, 19);
@@ -401,18 +418,18 @@
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(12, 687);
+            this.label15.Location = new System.Drawing.Point(12, 732);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(297, 26);
             this.label15.TabIndex = 12;
-            this.label15.Text = "Total Taxes due by Employer";
+            this.label15.Text = "Total Taxes";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtResultTaxes
             // 
             this.txtResultTaxes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTaxes.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTaxes.Location = new System.Drawing.Point(315, 691);
+            this.txtResultTaxes.Location = new System.Drawing.Point(315, 736);
             this.txtResultTaxes.Name = "txtResultTaxes";
             this.txtResultTaxes.ReadOnly = true;
             this.txtResultTaxes.Size = new System.Drawing.Size(211, 19);
@@ -425,7 +442,7 @@
             this.txtErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrors.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtErrors.ForeColor = System.Drawing.Color.Red;
-            this.txtErrors.Location = new System.Drawing.Point(0, 789);
+            this.txtErrors.Location = new System.Drawing.Point(0, 791);
             this.txtErrors.Multiline = true;
             this.txtErrors.Name = "txtErrors";
             this.txtErrors.ReadOnly = true;
@@ -436,7 +453,7 @@
             // 
             this.txtResultTotalPaye.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTotalPaye.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTotalPaye.Location = new System.Drawing.Point(315, 540);
+            this.txtResultTotalPaye.Location = new System.Drawing.Point(315, 710);
             this.txtResultTotalPaye.Name = "txtResultTotalPaye";
             this.txtResultTotalPaye.ReadOnly = true;
             this.txtResultTotalPaye.Size = new System.Drawing.Size(211, 19);
@@ -446,7 +463,7 @@
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(12, 536);
+            this.label16.Location = new System.Drawing.Point(12, 706);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(297, 26);
             this.label16.TabIndex = 15;
@@ -479,8 +496,8 @@
             // txtResultBonus
             // 
             this.txtResultBonus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultBonus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBonus.Location = new System.Drawing.Point(315, 334);
+            this.txtResultBonus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultBonus.Location = new System.Drawing.Point(315, 246);
             this.txtResultBonus.Name = "txtResultBonus";
             this.txtResultBonus.ReadOnly = true;
             this.txtResultBonus.Size = new System.Drawing.Size(211, 19);
@@ -490,7 +507,8 @@
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(12, 330);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 239);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(297, 26);
             this.label18.TabIndex = 19;
@@ -500,8 +518,8 @@
             // txtResultEarnings
             // 
             this.txtResultEarnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultEarnings.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultEarnings.Location = new System.Drawing.Point(315, 360);
+            this.txtResultEarnings.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultEarnings.Location = new System.Drawing.Point(315, 272);
             this.txtResultEarnings.Name = "txtResultEarnings";
             this.txtResultEarnings.ReadOnly = true;
             this.txtResultEarnings.Size = new System.Drawing.Size(211, 19);
@@ -511,7 +529,8 @@
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(12, 356);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(12, 265);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(297, 26);
             this.label19.TabIndex = 21;
@@ -529,11 +548,127 @@
             this.chkBenefitsIncluded.UseVisualStyleBackColor = true;
             this.chkBenefitsIncluded.CheckedChanged += new System.EventHandler(this.SomethingChanged);
             // 
+            // txtResultTotalUif
+            // 
+            this.txtResultTotalUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultTotalUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultTotalUif.Location = new System.Drawing.Point(315, 684);
+            this.txtResultTotalUif.Name = "txtResultTotalUif";
+            this.txtResultTotalUif.ReadOnly = true;
+            this.txtResultTotalUif.Size = new System.Drawing.Size(211, 19);
+            this.txtResultTotalUif.TabIndex = 25;
+            this.txtResultTotalUif.Text = "0.00";
+            this.txtResultTotalUif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(12, 680);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(297, 26);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Total UIF";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtResultSecondaryRebate
+            // 
+            this.txtResultSecondaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultSecondaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultSecondaryRebate.Location = new System.Drawing.Point(315, 448);
+            this.txtResultSecondaryRebate.Name = "txtResultSecondaryRebate";
+            this.txtResultSecondaryRebate.ReadOnly = true;
+            this.txtResultSecondaryRebate.Size = new System.Drawing.Size(211, 19);
+            this.txtResultSecondaryRebate.TabIndex = 27;
+            this.txtResultSecondaryRebate.Text = "0.00";
+            this.txtResultSecondaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label21
+            // 
+            this.label21.Location = new System.Drawing.Point(12, 444);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(297, 26);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Secondary Rebate";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtResultTertiaryRebate
+            // 
+            this.txtResultTertiaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultTertiaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultTertiaryRebate.Location = new System.Drawing.Point(315, 474);
+            this.txtResultTertiaryRebate.Name = "txtResultTertiaryRebate";
+            this.txtResultTertiaryRebate.ReadOnly = true;
+            this.txtResultTertiaryRebate.Size = new System.Drawing.Size(211, 19);
+            this.txtResultTertiaryRebate.TabIndex = 29;
+            this.txtResultTertiaryRebate.Text = "0.00";
+            this.txtResultTertiaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(12, 470);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(297, 26);
+            this.label22.TabIndex = 28;
+            this.label22.Text = "Tertiary Rebate";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtResultPayeLessRebate
+            // 
+            this.txtResultPayeLessRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultPayeLessRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultPayeLessRebate.Location = new System.Drawing.Point(315, 503);
+            this.txtResultPayeLessRebate.Name = "txtResultPayeLessRebate";
+            this.txtResultPayeLessRebate.ReadOnly = true;
+            this.txtResultPayeLessRebate.Size = new System.Drawing.Size(211, 19);
+            this.txtResultPayeLessRebate.TabIndex = 31;
+            this.txtResultPayeLessRebate.Text = "0.00";
+            this.txtResultPayeLessRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(12, 496);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(297, 26);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "PAYE Less Rebate";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtResultEmployerUif
+            // 
+            this.txtResultEmployerUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtResultEmployerUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultEmployerUif.Location = new System.Drawing.Point(315, 658);
+            this.txtResultEmployerUif.Name = "txtResultEmployerUif";
+            this.txtResultEmployerUif.ReadOnly = true;
+            this.txtResultEmployerUif.Size = new System.Drawing.Size(211, 19);
+            this.txtResultEmployerUif.TabIndex = 33;
+            this.txtResultEmployerUif.Text = "0.00";
+            this.txtResultEmployerUif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label24
+            // 
+            this.label24.Location = new System.Drawing.Point(12, 654);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(297, 26);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Employer UIF";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 847);
+            this.ClientSize = new System.Drawing.Size(928, 849);
+            this.Controls.Add(this.txtResultEmployerUif);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txtResultPayeLessRebate);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtResultTertiaryRebate);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.txtResultSecondaryRebate);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.txtResultTotalUif);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.chkBenefitsIncluded);
             this.Controls.Add(this.txtResultEarnings);
             this.Controls.Add(this.label19);
@@ -552,9 +687,9 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtResultEmployeeUif);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtResultMedicalRebate);
+            this.Controls.Add(this.txtResultMedicalTaxCredit);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtResultRebate);
+            this.Controls.Add(this.txtResultPrimaryRebate);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtResultBasePaye);
             this.Controls.Add(this.label9);
@@ -607,9 +742,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtResultBasePaye;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtResultRebate;
+        private System.Windows.Forms.TextBox txtResultPrimaryRebate;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtResultMedicalRebate;
+        private System.Windows.Forms.TextBox txtResultMedicalTaxCredit;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtResultEmployeeUif;
         private System.Windows.Forms.Label label13;
@@ -628,6 +763,16 @@
         private System.Windows.Forms.TextBox txtResultEarnings;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox chkBenefitsIncluded;
+        private System.Windows.Forms.TextBox txtResultTotalUif;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtResultSecondaryRebate;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtResultTertiaryRebate;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtResultPayeLessRebate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtResultEmployerUif;
+        private System.Windows.Forms.Label label24;
     }
 }
 

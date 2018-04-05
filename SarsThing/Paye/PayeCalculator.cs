@@ -32,8 +32,7 @@ namespace SarsThing.Paye
             if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
             if (employee.NumberOfDependents > 0 && employee.MedicalAid <= 0) throw new ArgumentException($"Cannot have dependents without medical aid.", nameof(employee));
             if (employee.Age < 0) throw new ArgumentException($"{nameof(employee.Age)} is invalid.", nameof(employee));
-
-
+            
             double yearlySalary = employee.MonthlySalaryExcludingBenefits * 12;
             double effectiveYearlySalary = yearlySalary + employee.MedicalAid * 12 + employee.Bonus * 12;
 
@@ -49,22 +48,33 @@ namespace SarsThing.Paye
             bool tertiary = employee.Age >= parameters.TertiaryRebateAge;
 
             //calculate tax rebate
-            double rebate = 0;
+            double primaryRebate = 0;
+            double secondaryRebate = 0;
+            double tertiaryRebate = 0;
 
-            if (primary)
+            if (employee.Age < parameters.SecondaryRebateAge)
             {
-                if (effectiveYearlySalary <= parameters.PrimaryThreshold) rebate = yearlyPaye;
-                else rebate = parameters.PrimaryRebate;
+                if (effectiveYearlySalary > parameters.PrimaryThreshold)
+                {
+                    primaryRebate = parameters.PrimaryRebate;
+                }
             }
-            else if (secondary)
+            else if (employee.Age >= parameters.SecondaryRebateAge && employee.Age < parameters.TertiaryRebateAge)
             {
-                if (effectiveYearlySalary <= parameters.SecondaryThreshold) rebate = yearlyPaye;
-                else rebate = parameters.SecondaryRebate;
+                if (effectiveYearlySalary > parameters.SecondaryThreshold)
+                {
+                    primaryRebate = parameters.PrimaryRebate;
+                    secondaryRebate = parameters.SecondaryRebate;
+                }
             }
-            else if (tertiary)
+            else if (employee.Age >= parameters.TertiaryRebateAge)
             {
-                if (effectiveYearlySalary <= parameters.TertiaryThreshold) rebate = yearlyPaye;
-                else rebate = parameters.TertiaryRebate;
+                if (effectiveYearlySalary > parameters.TertiaryThreshold)
+                {
+                    primaryRebate = parameters.PrimaryRebate;
+                    secondaryRebate = parameters.SecondaryRebate;
+                    tertiaryRebate = parameters.TertiaryRebate;
+                }
             }
 
             //calculate medical rebate
@@ -99,10 +109,12 @@ namespace SarsThing.Paye
             //calculate results
             var result = new CalculationResults
             {
-                BasicSalary = (double)yearlySalary / 12.0,
+                BasicSalary = yearlySalary / 12.0,
                 BasePaye = yearlyPaye / 12.0,
-                Rebate = rebate / 12.0,
-                MedicalRebate = medicalRebate / 12.0,
+                PrimaryRebate = primaryRebate / 12.0,
+                SecondaryRebate = secondaryRebate / 12.0,
+                TertiaryRebate = tertiaryRebate / 12.0,
+                MedicalAidTaxCredit = medicalRebate / 12.0,
                 Medical = employee.MedicalAid,
                 EmployeeUif = CalculateUif(yearlySalary, parameters.EmployeeUif, parameters.UifCap),
                 EmployerUif = CalculateUif(yearlySalary, parameters.EmployerUif, parameters.UifCap),

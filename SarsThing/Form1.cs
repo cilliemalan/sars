@@ -144,27 +144,37 @@ namespace SarsThing
                 txtResultDependents.Text = "";
                 txtResultEmployeeUif.Text = "";
                 txtResultMedical.Text = "";
-                txtResultMedicalRebate.Text = "";
+                txtResultMedicalTaxCredit.Text = "";
                 txtResultBasePaye.Text = "";
                 txtResultTotalPaye.Text = "";
                 txtResultPayout.Text = "";
-                txtResultRebate.Text = "";
+                txtResultPrimaryRebate.Text = "";
+                txtResultSecondaryRebate.Text = "";
+                txtResultTertiaryRebate.Text = "";
+                txtResultPayeLessRebate.Text = "";
                 txtResultTaxes.Text = "";
                 txtResultBonus.Text = "";
                 txtResultEarnings.Text = "";
+                txtResultEmployerUif.Text = "";
+                txtResultTotalUif.Text = "";
             }
             else
             {
                 txtResultBasic.Text = Format(result.BasicSalary);
-                txtResultDeductions.Text = Format(result.Deductions);
-                txtResultDependents.Text = Format(iDependents);
+                txtResultDeductions.Text = Format(-result.Deductions);
+                txtResultDependents.Text = iDependents.ToString();
                 txtResultEmployeeUif.Text = Format(result.EmployeeUif);
                 txtResultMedical.Text = Format(result.Medical);
-                txtResultMedicalRebate.Text = Format(result.MedicalRebate);
+                txtResultMedicalTaxCredit.Text = Format(-result.MedicalAidTaxCredit);
                 txtResultBasePaye.Text = Format(result.BasePaye);
                 txtResultTotalPaye.Text = Format(result.Paye);
                 txtResultPayout.Text = Format(result.Payout);
-                txtResultRebate.Text = Format(result.Rebate);
+                txtResultPrimaryRebate.Text = Format(-result.PrimaryRebate);
+                txtResultSecondaryRebate.Text = Format(-result.SecondaryRebate);
+                txtResultTertiaryRebate.Text = Format(-result.TertiaryRebate);
+                txtResultPayeLessRebate.Text = Format(result.PayeLessRebate);
+                txtResultEmployerUif.Text = Format(result.EmployerUif);
+                txtResultTotalUif.Text = Format(result.TotalUif);
                 txtResultTaxes.Text = Format(result.Taxes);
                 txtResultBonus.Text = Format(result.Bonus);
                 txtResultEarnings.Text = Format(result.Earnings);
