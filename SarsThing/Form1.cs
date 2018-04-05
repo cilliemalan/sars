@@ -106,7 +106,7 @@ namespace SarsThing
 
                     PayeCalculator calculator = new PayeCalculator();
                     result = calculator.Calculate(
-                        CalculationParameters.Sars2018,
+                        CalculationParameters.Sars2019,
                         new EmployeeDetails
                         {
                             Age = iAge,
