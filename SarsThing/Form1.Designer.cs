@@ -90,7 +90,7 @@
             this.txtSalary.Location = new System.Drawing.Point(315, 44);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(211, 26);
-            this.txtSalary.TabIndex = 0;
+            this.txtSalary.TabIndex = 1;
             this.txtSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSalary.TextChanged += new System.EventHandler(this.SomethingChanged);
             this.txtSalary.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SomethingKey);
@@ -167,7 +167,7 @@
             this.txtDependents.Location = new System.Drawing.Point(315, 184);
             this.txtDependents.Name = "txtDependents";
             this.txtDependents.Size = new System.Drawing.Size(211, 26);
-            this.txtDependents.TabIndex = 6;
+            this.txtDependents.TabIndex = 5;
             this.txtDependents.Text = "0";
             this.txtDependents.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDependents.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -190,7 +190,7 @@
             this.txtAge.Location = new System.Drawing.Point(315, 12);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(211, 26);
-            this.txtAge.TabIndex = 8;
+            this.txtAge.TabIndex = 0;
             this.txtAge.Text = "18";
             this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAge.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -203,7 +203,7 @@
             this.rdCalculateSalary.Location = new System.Drawing.Point(532, 44);
             this.rdCalculateSalary.Name = "rdCalculateSalary";
             this.rdCalculateSalary.Size = new System.Drawing.Size(203, 26);
-            this.rdCalculateSalary.TabIndex = 10;
+            this.rdCalculateSalary.TabIndex = 7;
             this.rdCalculateSalary.Tag = "A";
             this.rdCalculateSalary.Text = "I want to calculate this";
             this.rdCalculateSalary.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.rdCalculatePayout.Location = new System.Drawing.Point(532, 76);
             this.rdCalculatePayout.Name = "rdCalculatePayout";
             this.rdCalculatePayout.Size = new System.Drawing.Size(203, 26);
-            this.rdCalculatePayout.TabIndex = 11;
+            this.rdCalculatePayout.TabIndex = 8;
             this.rdCalculatePayout.TabStop = true;
             this.rdCalculatePayout.Tag = "A";
             this.rdCalculatePayout.Text = "I want to calculate this";
@@ -241,6 +241,7 @@
             this.txtResultBasic.ReadOnly = true;
             this.txtResultBasic.Size = new System.Drawing.Size(211, 19);
             this.txtResultBasic.TabIndex = 13;
+            this.txtResultBasic.TabStop = false;
             this.txtResultBasic.Text = "0.00";
             this.txtResultBasic.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -263,6 +264,7 @@
             this.txtResultMedical.ReadOnly = true;
             this.txtResultMedical.Size = new System.Drawing.Size(211, 19);
             this.txtResultMedical.TabIndex = 13;
+            this.txtResultMedical.TabStop = false;
             this.txtResultMedical.Text = "0.00";
             this.txtResultMedical.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -285,6 +287,7 @@
             this.txtResultDependents.ReadOnly = true;
             this.txtResultDependents.Size = new System.Drawing.Size(211, 19);
             this.txtResultDependents.TabIndex = 13;
+            this.txtResultDependents.TabStop = false;
             this.txtResultDependents.Text = "0.00";
             this.txtResultDependents.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -306,6 +309,7 @@
             this.txtResultBasePaye.ReadOnly = true;
             this.txtResultBasePaye.Size = new System.Drawing.Size(211, 19);
             this.txtResultBasePaye.TabIndex = 13;
+            this.txtResultBasePaye.TabStop = false;
             this.txtResultBasePaye.Text = "0.00";
             this.txtResultBasePaye.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -327,6 +331,7 @@
             this.txtResultPrimaryRebate.ReadOnly = true;
             this.txtResultPrimaryRebate.Size = new System.Drawing.Size(211, 19);
             this.txtResultPrimaryRebate.TabIndex = 13;
+            this.txtResultPrimaryRebate.TabStop = false;
             this.txtResultPrimaryRebate.Text = "0.00";
             this.txtResultPrimaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -349,6 +354,7 @@
             this.txtResultMedicalTaxCredit.ReadOnly = true;
             this.txtResultMedicalTaxCredit.Size = new System.Drawing.Size(211, 19);
             this.txtResultMedicalTaxCredit.TabIndex = 13;
+            this.txtResultMedicalTaxCredit.TabStop = false;
             this.txtResultMedicalTaxCredit.Text = "0.00";
             this.txtResultMedicalTaxCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -371,6 +377,7 @@
             this.txtResultEmployeeUif.ReadOnly = true;
             this.txtResultEmployeeUif.Size = new System.Drawing.Size(211, 19);
             this.txtResultEmployeeUif.TabIndex = 13;
+            this.txtResultEmployeeUif.TabStop = false;
             this.txtResultEmployeeUif.Text = "0.00";
             this.txtResultEmployeeUif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -393,6 +400,7 @@
             this.txtResultDeductions.ReadOnly = true;
             this.txtResultDeductions.Size = new System.Drawing.Size(211, 19);
             this.txtResultDeductions.TabIndex = 13;
+            this.txtResultDeductions.TabStop = false;
             this.txtResultDeductions.Text = "0.00";
             this.txtResultDeductions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -415,6 +423,7 @@
             this.txtResultPayout.ReadOnly = true;
             this.txtResultPayout.Size = new System.Drawing.Size(211, 19);
             this.txtResultPayout.TabIndex = 13;
+            this.txtResultPayout.TabStop = false;
             this.txtResultPayout.Text = "0.00";
             this.txtResultPayout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -436,6 +445,7 @@
             this.txtResultTaxes.ReadOnly = true;
             this.txtResultTaxes.Size = new System.Drawing.Size(211, 19);
             this.txtResultTaxes.TabIndex = 13;
+            this.txtResultTaxes.TabStop = false;
             this.txtResultTaxes.Text = "0.00";
             this.txtResultTaxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -450,6 +460,7 @@
             this.txtErrors.ReadOnly = true;
             this.txtErrors.Size = new System.Drawing.Size(928, 58);
             this.txtErrors.TabIndex = 14;
+            this.txtErrors.TabStop = false;
             // 
             // txtResultTotalPaye
             // 
@@ -460,6 +471,7 @@
             this.txtResultTotalPaye.ReadOnly = true;
             this.txtResultTotalPaye.Size = new System.Drawing.Size(211, 19);
             this.txtResultTotalPaye.TabIndex = 16;
+            this.txtResultTotalPaye.TabStop = false;
             this.txtResultTotalPaye.Text = "0.00";
             this.txtResultTotalPaye.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -487,7 +499,7 @@
             this.txtBonus.Location = new System.Drawing.Point(315, 108);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(211, 26);
-            this.txtBonus.TabIndex = 17;
+            this.txtBonus.TabIndex = 3;
             this.txtBonus.Text = "0";
             this.txtBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBonus.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -504,6 +516,7 @@
             this.txtResultBonus.ReadOnly = true;
             this.txtResultBonus.Size = new System.Drawing.Size(211, 19);
             this.txtResultBonus.TabIndex = 20;
+            this.txtResultBonus.TabStop = false;
             this.txtResultBonus.Text = "0.00";
             this.txtResultBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -526,6 +539,7 @@
             this.txtResultEarnings.ReadOnly = true;
             this.txtResultEarnings.Size = new System.Drawing.Size(211, 19);
             this.txtResultEarnings.TabIndex = 22;
+            this.txtResultEarnings.TabStop = false;
             this.txtResultEarnings.Text = "0.00";
             this.txtResultEarnings.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -544,9 +558,9 @@
             this.chkBenefitsIncluded.AutoSize = true;
             this.chkBenefitsIncluded.Location = new System.Drawing.Point(684, 49);
             this.chkBenefitsIncluded.Name = "chkBenefitsIncluded";
-            this.chkBenefitsIncluded.Size = new System.Drawing.Size(128, 17);
-            this.chkBenefitsIncluded.TabIndex = 23;
-            this.chkBenefitsIncluded.Text = "This includes benefits";
+            this.chkBenefitsIncluded.Size = new System.Drawing.Size(166, 17);
+            this.chkBenefitsIncluded.TabIndex = 9;
+            this.chkBenefitsIncluded.Text = "This number includes benefits";
             this.chkBenefitsIncluded.UseVisualStyleBackColor = true;
             this.chkBenefitsIncluded.CheckedChanged += new System.EventHandler(this.SomethingChanged);
             // 
@@ -559,6 +573,7 @@
             this.txtResultTotalUif.ReadOnly = true;
             this.txtResultTotalUif.Size = new System.Drawing.Size(211, 19);
             this.txtResultTotalUif.TabIndex = 25;
+            this.txtResultTotalUif.TabStop = false;
             this.txtResultTotalUif.Text = "0.00";
             this.txtResultTotalUif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -580,6 +595,7 @@
             this.txtResultSecondaryRebate.ReadOnly = true;
             this.txtResultSecondaryRebate.Size = new System.Drawing.Size(211, 19);
             this.txtResultSecondaryRebate.TabIndex = 27;
+            this.txtResultSecondaryRebate.TabStop = false;
             this.txtResultSecondaryRebate.Text = "0.00";
             this.txtResultSecondaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -601,6 +617,7 @@
             this.txtResultTertiaryRebate.ReadOnly = true;
             this.txtResultTertiaryRebate.Size = new System.Drawing.Size(211, 19);
             this.txtResultTertiaryRebate.TabIndex = 29;
+            this.txtResultTertiaryRebate.TabStop = false;
             this.txtResultTertiaryRebate.Text = "0.00";
             this.txtResultTertiaryRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -622,6 +639,7 @@
             this.txtResultPayeLessRebate.ReadOnly = true;
             this.txtResultPayeLessRebate.Size = new System.Drawing.Size(211, 19);
             this.txtResultPayeLessRebate.TabIndex = 31;
+            this.txtResultPayeLessRebate.TabStop = false;
             this.txtResultPayeLessRebate.Text = "0.00";
             this.txtResultPayeLessRebate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -644,6 +662,7 @@
             this.txtResultEmployerUif.ReadOnly = true;
             this.txtResultEmployerUif.Size = new System.Drawing.Size(211, 19);
             this.txtResultEmployerUif.TabIndex = 33;
+            this.txtResultEmployerUif.TabStop = false;
             this.txtResultEmployerUif.Text = "0.00";
             this.txtResultEmployerUif.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -663,7 +682,7 @@
             this.cmbTaxYear.Location = new System.Drawing.Point(315, 220);
             this.cmbTaxYear.Name = "cmbTaxYear";
             this.cmbTaxYear.Size = new System.Drawing.Size(211, 21);
-            this.cmbTaxYear.TabIndex = 34;
+            this.cmbTaxYear.TabIndex = 6;
             this.cmbTaxYear.SelectedIndexChanged += new System.EventHandler(this.SomethingChanged);
             // 
             // label25
