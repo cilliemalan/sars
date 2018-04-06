@@ -15,9 +15,30 @@ namespace SarsThing
     public partial class Form1 : Form
     {
         private bool recurseProtect = false;
+
+        private Dictionary<int, CalculationParameters> TaxYears { get; }
+        private int SelectedTaxYear =>
+            cmbTaxYear.SelectedItem is int
+            ? (int)cmbTaxYear.SelectedItem
+            : default(int);
+        private CalculationParameters SelectedTaxYearParameters =>
+            TaxYears.TryGetValue(SelectedTaxYear, out var year)
+            ? year
+            : CalculationParameters.AllYears.OrderByDescending(x => x.Year).First();
+
         public Form1()
         {
             InitializeComponent();
+
+            TaxYears = CalculationParameters.AllYears.ToDictionary(x => x.Year);
+
+            cmbTaxYear.Items.AddRange(CalculationParameters.AllYears
+                .Select(x => x.Year)
+                .OrderBy(x => x)
+                .Cast<Object>()
+                .ToArray());
+
+            cmbTaxYear.SelectedIndex = cmbTaxYear.Items.Count - 1;
         }
 
         private void CalculateCheckedChanged(object sender, EventArgs e)
@@ -98,7 +119,7 @@ namespace SarsThing
             {
                 try
                 {
-                    if(benefitsIncluded)
+                    if (benefitsIncluded)
                     {
                         dSalary -= dMedicalAid;
                     }
@@ -106,7 +127,7 @@ namespace SarsThing
 
                     PayeCalculator calculator = new PayeCalculator();
                     result = calculator.Calculate(
-                        CalculationParameters.Sars2019,
+                        SelectedTaxYearParameters,
                         new EmployeeDetails
                         {
                             Age = iAge,
