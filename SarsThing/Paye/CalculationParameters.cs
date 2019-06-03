@@ -12,7 +12,8 @@ namespace SarsThing.Paye
         public static readonly CalculationParameters Sars2017 = Get2017();
         public static readonly CalculationParameters Sars2018 = Get2018();
         public static readonly CalculationParameters Sars2019 = Get2019();
-        public static readonly CalculationParameters[] AllYears = new[] { Sars2016, Sars2017, Sars2018, Sars2019 };
+        public static readonly CalculationParameters Sars2020 = Get2020();
+        public static readonly CalculationParameters[] AllYears = new[] { Sars2016, Sars2017, Sars2018, Sars2019, Sars2020 };
 
         public int Year { get; private set; }
         public Bracket[] Brackets { get; private set; }
@@ -311,6 +312,13 @@ namespace SarsThing.Paye
                 EmployeeUif = 0.01,
                 EmployerUif = 0.01
             };
+        }
+
+        private static CalculationParameters Get2020()
+        {
+            var r = Get2019();
+            r.Year = 2020;
+            return r;
         }
     }
 }
