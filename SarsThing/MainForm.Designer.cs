@@ -1,6 +1,6 @@
 ﻿namespace SarsThing
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -694,7 +694,7 @@
             this.label25.Text = "Tax Year";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -753,8 +753,8 @@
             this.Controls.Add(this.txtPayout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSalary);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "SARS Thing";
             this.Load += new System.EventHandler(this.FormLoad);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SarsThing
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private bool recurseProtect = false;
 
@@ -26,7 +26,7 @@ namespace SarsThing
             ? year
             : CalculationParameters.AllYears.OrderByDescending(x => x.Year).First();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -95,12 +95,7 @@ namespace SarsThing
 
             if (!txtDependents.Focused)
             {
-                if (dMedicalAid == 0 && iDependents != 0)
-                {
-                    iDependents = 0;
-                    txtDependents.Text = "0";
-                }
-                else if (dMedicalAid > 0 && iDependents == 0)
+                if (dMedicalAid > 0 && iDependents == 0)
                 {
                     iDependents = 1;
                     txtDependents.Text = "1";
@@ -108,7 +103,6 @@ namespace SarsThing
             }
 
             if (iDependents == 0) dMedicalAid = 0;
-            if (dMedicalAid == 0) iDependents = 0;
 
             badControls.ForEach(MakeBad);
             goodControls.ForEach(MakeGood);

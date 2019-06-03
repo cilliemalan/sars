@@ -30,9 +30,8 @@ namespace SarsThing.Paye
             if (employee.MonthlySalaryExcludingBenefits < 0) throw new ArgumentException($"{nameof(employee.MonthlySalaryExcludingBenefits)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents < 0) throw new ArgumentException($"{nameof(employee.NumberOfDependents)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
-            if (employee.NumberOfDependents > 0 && employee.MedicalAid <= 0) throw new ArgumentException($"Cannot have dependents without medical aid.", nameof(employee));
             if (employee.Age < 0) throw new ArgumentException($"{nameof(employee.Age)} is invalid.", nameof(employee));
-            
+
             double yearlySalary = employee.MonthlySalaryExcludingBenefits * 12;
             double effectiveYearlySalary = yearlySalary + employee.MedicalAid * 12 + employee.Bonus * 12;
 
@@ -80,31 +79,28 @@ namespace SarsThing.Paye
             //calculate medical rebate
             double medicalRebate = 0;
 
-            if (employee.MedicalAid > 0)
+            int dependents = employee.NumberOfDependents;
+
+            if (dependents > 0)
             {
-                int dependents = employee.NumberOfDependents;
-
-                if (dependents > 0)
-                {
-                    --dependents;
-                    medicalRebate += parameters.MedicalSchemeTaxpayerRebate;
-                }
-
-                if (dependents > 0)
-                {
-                    --dependents;
-                    medicalRebate += parameters.MedicalSchemeFirstDependentRebate;
-                }
-
-                while (dependents > 0)
-                {
-                    --dependents;
-                    medicalRebate += parameters.MedicalSchemeOtherDependentRebate;
-                }
-
-                //medical rebate is monthly so multiply by 12 for consistency
-                medicalRebate *= 12;
+                --dependents;
+                medicalRebate += parameters.MedicalSchemeTaxpayerRebate;
             }
+
+            if (dependents > 0)
+            {
+                --dependents;
+                medicalRebate += parameters.MedicalSchemeFirstDependentRebate;
+            }
+
+            while (dependents > 0)
+            {
+                --dependents;
+                medicalRebate += parameters.MedicalSchemeOtherDependentRebate;
+            }
+
+            //medical rebate is monthly so multiply by 12 for consistency
+            medicalRebate *= 12;
 
             //calculate results
             var result = new CalculationResults
@@ -141,7 +137,6 @@ namespace SarsThing.Paye
             if (employee.MonthlySalaryExcludingBenefits < 0) throw new ArgumentException($"{nameof(employee.MonthlySalaryExcludingBenefits)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents < 0) throw new ArgumentException($"{nameof(employee.NumberOfDependents)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
-            if (employee.NumberOfDependents > 0 && employee.MedicalAid <= 0) throw new ArgumentException($"Cannot have dependents without medical aid.", nameof(employee));
             if (employee.Age < 0) throw new ArgumentException($"{nameof(employee.Age)} is invalid.", nameof(employee));
 
             var emp = new EmployeeDetails
