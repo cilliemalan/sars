@@ -8,18 +8,21 @@ namespace SarsThing.Paye
 {
     public class PayeCalculator
     {
-        public CalculationResults Calculate(CalculationParameters parameters, EmployeeDetails employee, CalculationType calculationType = CalculationType.Payout)
+        public CalculationResults Calculate(CalculationParameters parameters, EmployeeDetails employee, CalculationType calculationType)
         {
             if (parameters == null) throw new ArgumentNullException(nameof(parameters));
             if (employee == null) throw new ArgumentNullException(nameof(employee));
 
-            if (calculationType == CalculationType.Payout)
+            switch (calculationType)
             {
-                return CalculatePayout(parameters, employee);
-            }
-            else
-            {
-                return CalculatePaye(parameters, employee);
+                case CalculationType.SpecifySalary:
+                    return CalculatePayout(parameters, employee);
+                case CalculationType.SpecifyPayout:
+                    return CalculatePaye(parameters, employee);
+                case CalculationType.SpecifyTotalCostToCompany:
+                    return CalculateTcc(parameters, employee);
+                default:
+                    throw new ArgumentException(nameof(calculationType));
             }
         }
 
@@ -50,12 +53,17 @@ namespace SarsThing.Paye
             double primaryRebate = 0;
             double secondaryRebate = 0;
             double tertiaryRebate = 0;
+            bool notaxes = false;
 
             if (employee.Age < parameters.SecondaryRebateAge)
             {
                 if (effectiveYearlySalary > parameters.PrimaryThreshold)
                 {
                     primaryRebate = parameters.PrimaryRebate;
+                }
+                else
+                {
+                    notaxes = true;
                 }
             }
             else if (employee.Age >= parameters.SecondaryRebateAge && employee.Age < parameters.TertiaryRebateAge)
@@ -65,6 +73,10 @@ namespace SarsThing.Paye
                     primaryRebate = parameters.PrimaryRebate;
                     secondaryRebate = parameters.SecondaryRebate;
                 }
+                else
+                {
+                    notaxes = true;
+                }
             }
             else if (employee.Age >= parameters.TertiaryRebateAge)
             {
@@ -73,6 +85,10 @@ namespace SarsThing.Paye
                     primaryRebate = parameters.PrimaryRebate;
                     secondaryRebate = parameters.SecondaryRebate;
                     tertiaryRebate = parameters.TertiaryRebate;
+                }
+                else
+                {
+                    notaxes = true;
                 }
             }
 
@@ -106,11 +122,11 @@ namespace SarsThing.Paye
             var result = new CalculationResults
             {
                 BasicSalary = yearlySalary / 12.0,
-                BasePaye = yearlyPaye / 12.0,
-                PrimaryRebate = primaryRebate / 12.0,
-                SecondaryRebate = secondaryRebate / 12.0,
-                TertiaryRebate = tertiaryRebate / 12.0,
-                MedicalAidTaxCredit = medicalRebate / 12.0,
+                BasePaye = notaxes ? 0 : yearlyPaye / 12.0,
+                PrimaryRebate = notaxes ? 0 : primaryRebate / 12.0,
+                SecondaryRebate = notaxes ? 0 : secondaryRebate / 12.0,
+                TertiaryRebate = notaxes ? 0 : tertiaryRebate / 12.0,
+                MedicalAidTaxCredit = notaxes ? 0 : medicalRebate / 12.0,
                 Medical = employee.MedicalAid,
                 EmployeeUif = CalculateUif(yearlySalary, parameters.EmployeeUif, parameters.UifCap),
                 EmployerUif = CalculateUif(yearlySalary, parameters.EmployerUif, parameters.UifCap),
@@ -134,7 +150,6 @@ namespace SarsThing.Paye
         {
             if (employee.MonthlyPayout == 0) throw new ArgumentException($"{nameof(employee.MonthlyPayout)} needs to be specified.", nameof(employee));
             if (employee.MedicalAid < 0) throw new ArgumentException($"{nameof(employee.MedicalAid)} is invalid.", nameof(employee));
-            if (employee.MonthlySalaryExcludingBenefits < 0) throw new ArgumentException($"{nameof(employee.MonthlySalaryExcludingBenefits)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents < 0) throw new ArgumentException($"{nameof(employee.NumberOfDependents)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
             if (employee.Age < 0) throw new ArgumentException($"{nameof(employee.Age)} is invalid.", nameof(employee));
@@ -157,10 +172,41 @@ namespace SarsThing.Paye
 
             //fill in the salary
             employee.MonthlySalaryExcludingBenefits = lastResult.BasicSalary;
+            employee.TotalCostToCompany = lastResult.TotalCostToCompany;
 
             return lastResult;
         }
 
+        private CalculationResults CalculateTcc(CalculationParameters parameters, EmployeeDetails employee)
+        {
+            if (employee.TotalCostToCompany == 0) throw new ArgumentException($"{nameof(employee.MonthlyPayout)} needs to be specified.", nameof(employee));
+            if (employee.MedicalAid < 0) throw new ArgumentException($"{nameof(employee.MedicalAid)} is invalid.", nameof(employee));
+            if (employee.NumberOfDependents < 0) throw new ArgumentException($"{nameof(employee.NumberOfDependents)} is invalid.", nameof(employee));
+            if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
+            if (employee.Age < 0) throw new ArgumentException($"{nameof(employee.Age)} is invalid.", nameof(employee));
+
+            var emp = new EmployeeDetails
+            {
+                Age = employee.Age,
+                NumberOfDependents = employee.NumberOfDependents,
+                MedicalAid = employee.MedicalAid
+            };
+
+            CalculationResults lastResult = null;
+
+            var actualSalary = FindRoot(salary =>
+            {
+                emp.MonthlySalaryExcludingBenefits = salary;
+                lastResult = CalculatePayout(parameters, emp);
+                return lastResult.TotalCostToCompany - employee.TotalCostToCompany;
+            });
+
+            //fill in the salary
+            employee.MonthlySalaryExcludingBenefits = lastResult.BasicSalary;
+            employee.TotalCostToCompany = lastResult.TotalCostToCompany;
+
+            return lastResult;
+        }
 
         private double FindRoot(Func<double, double> function, double a = 1, double b = 1000000, double tolerance = 1E-5, int maxIterations = 1000)
         {

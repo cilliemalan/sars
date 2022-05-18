@@ -43,15 +43,29 @@ namespace SarsThing
 
         private void CalculateCheckedChanged(object sender, EventArgs e)
         {
-            if (rdCalculatePayout.Checked)
+            if (rdSpecifySalary.Checked)
             {
-                txtPayout.Enabled = false;
                 txtSalary.Enabled = true;
+                txtTotalCostToCompany.Enabled = false;
+                txtPayout.Enabled = false;
+            }
+            else if (rdTotalCostToCompany.Checked)
+            {
+                txtSalary.Enabled = false;
+                txtTotalCostToCompany.Enabled = true;
+                txtPayout.Enabled = false;
+            }
+            else if (rdSpecifyPayout.Checked)
+            {
+                txtSalary.Enabled = false;
+                txtTotalCostToCompany.Enabled = false;
+                txtPayout.Enabled = true;
             }
             else
             {
-                txtPayout.Enabled = true;
                 txtSalary.Enabled = false;
+                txtTotalCostToCompany.Enabled = false;
+                txtPayout.Enabled = false;
             }
 
             Recalculate();
@@ -65,30 +79,65 @@ namespace SarsThing
             Action<TextBox> MakeGood = c => { c.ForeColor = SystemColors.ControlText; };
             Func<double, string> Format = d => d.ToString("c");
 
-            int iAge;
-            double dSalary;
-            double dPayout;
-            double dMedicalAid;
-            double dBonus;
-            int iDependents;
             bool benefitsIncluded = chkBenefitsIncluded.Checked;
+            bool couldParseAge = int.TryParse(txtAge.Text, out int iAge);
+            bool couldParseSalary = double.TryParse(txtSalary.Text, out double dSalary);
+            bool couldParsePayout = double.TryParse(txtPayout.Text, out double dPayout);
+            bool couldParseTCC = double.TryParse(txtTotalCostToCompany.Text, out double dTCC);
+            bool couldParseMedicalAid = double.TryParse(txtMedicalAid.Text, out double dMedicalAid);
+            bool couldParseDependents = int.TryParse(txtDependents.Text, out int iDependents);
+            bool couldParseBonus = double.TryParse(txtBonus.Text, out double dBonus);
 
-            bool couldParseAge = int.TryParse(txtAge.Text, out iAge);
-            bool couldParseSalary = double.TryParse(txtSalary.Text, out dSalary);
-            bool couldParsePayout = double.TryParse(txtPayout.Text, out dPayout);
-            bool couldParseMedicalAid = double.TryParse(txtMedicalAid.Text, out dMedicalAid);
-            bool couldParseDependents = int.TryParse(txtDependents.Text, out iDependents);
-            bool couldParseBonus = double.TryParse(txtBonus.Text, out dBonus);
-
-            CalculationType calculation = rdCalculatePayout.Checked ? CalculationType.Payout : CalculationType.Paye;
+            CalculationType calculation;
+            if (rdSpecifyPayout.Checked) calculation = CalculationType.SpecifyPayout;
+            else if (rdSpecifySalary.Checked) calculation = CalculationType.SpecifySalary;
+            else if (rdTotalCostToCompany.Checked) calculation = CalculationType.SpecifyTotalCostToCompany;
+            else calculation = CalculationType.SpecifySalary;
 
             List<string> errors = new List<string>();
             List<TextBox> badControls = new List<TextBox>();
             List<TextBox> goodControls = new List<TextBox>();
 
             if (!couldParseAge || iAge < 16) { errors.Add("Invalid age"); badControls.Add(txtAge); } else goodControls.Add(txtAge);
-            if (calculation == CalculationType.Payout && (!couldParseSalary || dSalary < 0)) { errors.Add("Invalid salary"); badControls.Add(txtSalary); } else goodControls.Add(txtSalary);
-            if (calculation == CalculationType.Paye && (!couldParsePayout || dPayout < 0)) { errors.Add("Invalid payout"); badControls.Add(txtPayout); } else goodControls.Add(txtPayout);
+            switch (calculation)
+            {
+                case CalculationType.SpecifyPayout:
+                    if (!couldParsePayout || dPayout < 0)
+                    {
+                        errors.Add("Invalid payout");
+                        badControls.Add(txtPayout);
+                    }
+                    else
+                    {
+                        goodControls.Add(txtPayout);
+                        goodControls.Add(txtTotalCostToCompany);
+                    }
+                    break;
+                case CalculationType.SpecifySalary:
+                    if (!couldParseSalary || dSalary < 0)
+                    {
+                        errors.Add("Invalid salary");
+                        badControls.Add(txtSalary);
+                    }
+                    else
+                    {
+                        goodControls.Add(txtSalary);
+                        goodControls.Add(txtTotalCostToCompany);
+                    }
+                    break;
+                case CalculationType.SpecifyTotalCostToCompany:
+                    if (!couldParseTCC || dTCC < 0)
+                    {
+                        errors.Add("Invalid TCC");
+                        badControls.Add(txtTotalCostToCompany);
+                    }
+                    else
+                    {
+                        goodControls.Add(txtSalary);
+                        goodControls.Add(txtPayout);
+                    }
+                    break;
+            }
             if (!couldParseMedicalAid || dMedicalAid < 0) { errors.Add("Invalid medical aid"); badControls.Add(txtMedicalAid); } else goodControls.Add(txtMedicalAid);
             if (!couldParseDependents || iDependents < 0) { errors.Add("Invalid dependents"); badControls.Add(txtDependents); } else goodControls.Add(txtDependents);
             if (!couldParseBonus || dBonus < 0) { errors.Add("Invalid bonus"); badControls.Add(txtBonus); } else goodControls.Add(txtBonus);
@@ -129,18 +178,32 @@ namespace SarsThing
                             MonthlySalaryExcludingBenefits = dSalary,
                             NumberOfDependents = iDependents,
                             MedicalAid = dMedicalAid,
-                            Bonus = dBonus
+                            Bonus = dBonus,
+                            TotalCostToCompany = dTCC
                         },
                         calculation);
 
                     recurseProtect = true;
-                    if (calculation == CalculationType.Payout) txtPayout.Text = result.Payout.ToString("F2");
-                    if (calculation == CalculationType.Paye)
+                    if (calculation == CalculationType.SpecifySalary)
+                    {
+                        txtPayout.Text = result.Payout.ToString("F2");
+                        txtTotalCostToCompany.Text = result.TotalCostToCompany.ToString("F2");
+                    }
+                    else if (calculation == CalculationType.SpecifyPayout)
                     {
                         var value = result.BasicSalary;
-                        if (benefitsIncluded) value += dMedicalAid;
+                        if (benefitsIncluded) value += result.Medical;
                         txtSalary.Text = value.ToString("F2");
+                        txtTotalCostToCompany.Text = result.TotalCostToCompany.ToString("F2");
                     }
+                    else if (calculation == CalculationType.SpecifyTotalCostToCompany)
+                    {
+                        var salary = result.BasicSalary;
+                        if (benefitsIncluded) salary += result.Medical;
+                        txtSalary.Text = salary.ToString("F2");
+                        txtPayout.Text = result.Payout.ToString("F2");
+                    }
+
                     Invoke((Action)(() => recurseProtect = false));
 
                     if (result == null) errors.Add($"Calculation failed");

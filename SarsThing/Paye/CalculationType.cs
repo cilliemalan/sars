@@ -14,11 +14,16 @@ namespace SarsThing.Paye
         /// <summary>
         /// We need to calculate the payout. We have the total salary.
         /// </summary>
-        Payout,
+        SpecifySalary,
 
         /// <summary>
         /// We need to calculate the total PAYE. We have the payout.
         /// </summary>
-        Paye
+        SpecifyPayout,
+
+        /// <summary>
+        /// We need to calculate the total PAYE and payout. We have the total cost to company.
+        /// </summary>
+        SpecifyTotalCostToCompany
     }
 }

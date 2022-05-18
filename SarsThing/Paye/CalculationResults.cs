@@ -26,5 +26,6 @@ namespace SarsThing.Paye
         public double Deductions => Paye + EmployeeUif;
         public double Payout => BasicSalary - Deductions;
         public double Taxes => Paye + EmployeeUif + EmployerUif;
+        public double TotalCostToCompany => Taxes + Payout + Medical;
     }
 }

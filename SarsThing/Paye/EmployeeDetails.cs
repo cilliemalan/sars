@@ -14,5 +14,6 @@ namespace SarsThing.Paye
         public int NumberOfDependents { get; set; }
         public int Age { get; set; }
         public double Bonus { get; set; }
+        public double TotalCostToCompany { get; set; }
     }
 }
