@@ -179,7 +179,7 @@ namespace SarsThing.Paye
 
         private CalculationResults CalculateTcc(CalculationParameters parameters, EmployeeDetails employee)
         {
-            if (employee.TotalCostToCompany == 0) throw new ArgumentException($"{nameof(employee.MonthlyPayout)} needs to be specified.", nameof(employee));
+            if (employee.TotalCostToCompany == 0) throw new ArgumentException($"{nameof(employee.TotalCostToCompany)} needs to be specified.", nameof(employee));
             if (employee.MedicalAid < 0) throw new ArgumentException($"{nameof(employee.MedicalAid)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents < 0) throw new ArgumentException($"{nameof(employee.NumberOfDependents)} is invalid.", nameof(employee));
             if (employee.NumberOfDependents <= 0 && employee.MedicalAid > 0) throw new ArgumentException($"Cannot have medical aid without dependents.", nameof(employee));
