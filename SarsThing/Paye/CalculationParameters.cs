@@ -545,7 +545,8 @@ namespace SarsThing.Paye
                 MedicalSchemeFirstDependentRebate = 347,
                 MedicalSchemeOtherDependentRebate = 234,
                 EmployeeUif = 0.01,
-                EmployerUif = 0.01
+                EmployerUif = 0.01,
+                UifCap = 17712
             };
         }
     }
