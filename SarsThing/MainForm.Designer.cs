@@ -456,7 +456,7 @@
             this.txtErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrors.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtErrors.ForeColor = System.Drawing.Color.Red;
-            this.txtErrors.Location = new System.Drawing.Point(0, 842);
+            this.txtErrors.Location = new System.Drawing.Point(0, 871);
             this.txtErrors.Multiline = true;
             this.txtErrors.Name = "txtErrors";
             this.txtErrors.ReadOnly = true;
@@ -705,6 +705,7 @@
             this.rdTotalCostToCompany.Name = "rdTotalCostToCompany";
             this.rdTotalCostToCompany.Size = new System.Drawing.Size(203, 26);
             this.rdTotalCostToCompany.TabIndex = 38;
+            this.rdTotalCostToCompany.TabStop = true;
             this.rdTotalCostToCompany.Tag = "A";
             this.rdTotalCostToCompany.Text = "Specify this";
             this.rdTotalCostToCompany.UseVisualStyleBackColor = true;
@@ -733,7 +734,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 900);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(928, 929);
             this.Controls.Add(this.rdTotalCostToCompany);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.txtTotalCostToCompany);

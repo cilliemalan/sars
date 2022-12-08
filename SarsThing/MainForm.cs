@@ -75,9 +75,9 @@ namespace SarsThing
         {
             if (recurseProtect) return;
 
-            Action<TextBox> MakeBad = c => { c.ForeColor = Color.Red; };
-            Action<TextBox> MakeGood = c => { c.ForeColor = SystemColors.ControlText; };
-            Func<double, string> Format = d => d.ToString("c");
+            void MakeBad(Control c) { c.ForeColor = Color.Red; }
+            void MakeGood(Control c) { c.ForeColor = SystemColors.ControlText; }
+            string Format(double d) => d.ToString("c");
 
             bool benefitsIncluded = chkBenefitsIncluded.Checked;
             bool couldParseAge = int.TryParse(txtAge.Text, out int iAge);
@@ -96,9 +96,13 @@ namespace SarsThing
 
             List<string> errors = new List<string>();
             List<TextBox> badControls = new List<TextBox>();
-            List<TextBox> goodControls = new List<TextBox>();
 
-            if (!couldParseAge || iAge < 16) { errors.Add("Invalid age"); badControls.Add(txtAge); } else goodControls.Add(txtAge);
+            if (!couldParseAge || iAge < 16)
+            {
+                errors.Add("Invalid age");
+                badControls.Add(txtAge);
+            }
+
             switch (calculation)
             {
                 case CalculationType.SpecifyPayout:
@@ -107,22 +111,12 @@ namespace SarsThing
                         errors.Add("Invalid payout");
                         badControls.Add(txtPayout);
                     }
-                    else
-                    {
-                        goodControls.Add(txtPayout);
-                        goodControls.Add(txtTotalCostToCompany);
-                    }
                     break;
                 case CalculationType.SpecifySalary:
                     if (!couldParseSalary || dSalary < 0)
                     {
                         errors.Add("Invalid salary");
                         badControls.Add(txtSalary);
-                    }
-                    else
-                    {
-                        goodControls.Add(txtSalary);
-                        goodControls.Add(txtTotalCostToCompany);
                     }
                     break;
                 case CalculationType.SpecifyTotalCostToCompany:
@@ -131,16 +125,24 @@ namespace SarsThing
                         errors.Add("Invalid TCC");
                         badControls.Add(txtTotalCostToCompany);
                     }
-                    else
-                    {
-                        goodControls.Add(txtSalary);
-                        goodControls.Add(txtPayout);
-                    }
                     break;
             }
-            if (!couldParseMedicalAid || dMedicalAid < 0) { errors.Add("Invalid medical aid"); badControls.Add(txtMedicalAid); } else goodControls.Add(txtMedicalAid);
-            if (!couldParseDependents || iDependents < 0) { errors.Add("Invalid dependents"); badControls.Add(txtDependents); } else goodControls.Add(txtDependents);
-            if (!couldParseBonus || dBonus < 0) { errors.Add("Invalid bonus"); badControls.Add(txtBonus); } else goodControls.Add(txtBonus);
+
+            if (!couldParseMedicalAid || dMedicalAid < 0)
+            {
+                errors.Add("Invalid medical aid");
+                badControls.Add(txtMedicalAid);
+            }
+            if (!couldParseDependents || iDependents < 0)
+            {
+                errors.Add("Invalid dependents");
+                badControls.Add(txtDependents);
+            }
+            if (!couldParseBonus || dBonus < 0)
+            {
+                errors.Add("Invalid bonus");
+                badControls.Add(txtBonus);
+            }
 
             if (!txtDependents.Focused)
             {
@@ -154,8 +156,13 @@ namespace SarsThing
             if (iDependents == 0) dMedicalAid = 0;
 
             badControls.ForEach(MakeBad);
-            goodControls.ForEach(MakeGood);
-
+            foreach(var ctl in Controls.Cast<Control>()
+                .Where(x=>x is TextBox)
+                .Except(badControls))
+            {
+                MakeGood(ctl);
+            }
+            
             CalculationResults result = null;
 
             if (errors.Count == 0)
