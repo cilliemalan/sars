@@ -16,7 +16,8 @@ namespace SarsThing.Paye
         public static readonly CalculationParameters Sars2021 = Get2021();
         public static readonly CalculationParameters Sars2022 = Get2022();
         public static readonly CalculationParameters Sars2023 = Get2023();
-        public static readonly CalculationParameters[] AllYears = new[] { Sars2016, Sars2017, Sars2018, Sars2019, Sars2020, Sars2021, Sars2022, Sars2023 };
+        public static readonly CalculationParameters Sars2024 = Get2024();
+        public static readonly CalculationParameters[] AllYears = new[] { Sars2016, Sars2017, Sars2018, Sars2019, Sars2020, Sars2021, Sars2022, Sars2023, Sars2024 };
 
         public int Year { get; private set; }
         public Bracket[] Brackets { get; private set; }
@@ -544,6 +545,80 @@ namespace SarsThing.Paye
                 MedicalSchemeTaxpayerRebate = 347,
                 MedicalSchemeFirstDependentRebate = 347,
                 MedicalSchemeOtherDependentRebate = 234,
+                EmployeeUif = 0.01,
+                EmployerUif = 0.01,
+                UifCap = 17712
+            };
+        }
+
+        private static CalculationParameters Get2024()
+        {
+            return new CalculationParameters
+            {
+                Year = 2024,
+                Brackets = new[]
+                {
+                    new Bracket
+                    {
+                        Division = 237100,
+                        Appendage = 0,
+                        Rate = 0.18,
+                        Subtraction = 0
+                    },
+                    new Bracket
+                    {
+                        Division = 370500,
+                        Appendage = 42678,
+                        Rate = 0.26,
+                        Subtraction = 237100
+                    },
+                    new Bracket
+                    {
+                        Division = 512800,
+                        Appendage = 77362,
+                        Rate = 0.31,
+                        Subtraction = 370500
+                    },
+                    new Bracket
+                    {
+                        Division = 673000,
+                        Appendage = 121475,
+                        Rate = 0.36,
+                        Subtraction = 512800
+                    },
+                    new Bracket
+                    {
+                        Division = 857900,
+                        Appendage = 179147,
+                        Rate = 0.39,
+                        Subtraction = 673000
+                    },
+                    new Bracket
+                    {
+                        Division = 1817000,
+                        Appendage = 251258,
+                        Rate = 0.41,
+                        Subtraction = 857900
+                    },
+                    new Bracket
+                    {
+                        Division = int.MaxValue,
+                        Appendage = 644489,
+                        Rate = 0.45,
+                        Subtraction = 1817000
+                    },
+                },
+                PrimaryRebate = 17235,
+                PrimaryThreshold = 95750,
+                SecondaryRebateAge = 65,
+                SecondaryRebate = 9444,
+                SecondaryThreshold = 148217,
+                TertiaryRebateAge = 75,
+                TertiaryRebate = 3145,
+                TertiaryThreshold = 165689,
+                MedicalSchemeTaxpayerRebate = 364,
+                MedicalSchemeFirstDependentRebate = 364,
+                MedicalSchemeOtherDependentRebate = 246,
                 EmployeeUif = 0.01,
                 EmployerUif = 0.01,
                 UifCap = 17712
