@@ -85,16 +85,22 @@
             this.rdTotalCostToCompany = new System.Windows.Forms.RadioButton();
             this.label26 = new System.Windows.Forms.Label();
             this.txtTotalCostToCompany = new System.Windows.Forms.TextBox();
+            this.gbxRemuneration = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxRemuneration.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSalary
             // 
             this.txtSalary.Enabled = false;
             this.txtSalary.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(315, 44);
+            this.txtSalary.Location = new System.Drawing.Point(156, 16);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(211, 26);
-            this.txtSalary.TabIndex = 1;
+            this.txtSalary.TabIndex = 31;
             this.txtSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSalary.TextChanged += new System.EventHandler(this.SomethingChanged);
             this.txtSalary.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SomethingKey);
@@ -103,9 +109,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 26);
+            this.label1.Size = new System.Drawing.Size(144, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Total monthly salary";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,10 +120,10 @@
             // 
             this.txtPayout.Enabled = false;
             this.txtPayout.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPayout.Location = new System.Drawing.Point(315, 108);
+            this.txtPayout.Location = new System.Drawing.Point(156, 80);
             this.txtPayout.Name = "txtPayout";
             this.txtPayout.Size = new System.Drawing.Size(211, 26);
-            this.txtPayout.TabIndex = 2;
+            this.txtPayout.TabIndex = 33;
             this.txtPayout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayout.TextChanged += new System.EventHandler(this.SomethingChanged);
             this.txtPayout.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SomethingKey);
@@ -126,18 +132,18 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 108);
+            this.label2.Location = new System.Drawing.Point(9, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 26);
+            this.label2.Size = new System.Drawing.Size(141, 26);
             this.label2.TabIndex = 3;
             this.label2.Text = "Total monthly payout";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 184);
+            this.label3.Location = new System.Drawing.Point(12, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 26);
+            this.label3.Size = new System.Drawing.Size(186, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Medical aid";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -145,10 +151,10 @@
             // txtMedicalAid
             // 
             this.txtMedicalAid.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicalAid.Location = new System.Drawing.Point(315, 184);
+            this.txtMedicalAid.Location = new System.Drawing.Point(204, 26);
             this.txtMedicalAid.Name = "txtMedicalAid";
             this.txtMedicalAid.Size = new System.Drawing.Size(211, 26);
-            this.txtMedicalAid.TabIndex = 4;
+            this.txtMedicalAid.TabIndex = 21;
             this.txtMedicalAid.Text = "0";
             this.txtMedicalAid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMedicalAid.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -158,9 +164,9 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(12, 216);
+            this.label4.Location = new System.Drawing.Point(9, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(297, 26);
+            this.label4.Size = new System.Drawing.Size(189, 26);
             this.label4.TabIndex = 7;
             this.label4.Text = "Number of Dependents (incl taxpayer)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -168,10 +174,10 @@
             // txtDependents
             // 
             this.txtDependents.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDependents.Location = new System.Drawing.Point(315, 216);
+            this.txtDependents.Location = new System.Drawing.Point(204, 58);
             this.txtDependents.Name = "txtDependents";
             this.txtDependents.Size = new System.Drawing.Size(211, 26);
-            this.txtDependents.TabIndex = 5;
+            this.txtDependents.TabIndex = 22;
             this.txtDependents.Text = "0";
             this.txtDependents.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDependents.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -181,9 +187,9 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(12, 12);
+            this.label5.Location = new System.Drawing.Point(6, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(297, 26);
+            this.label5.Size = new System.Drawing.Size(192, 26);
             this.label5.TabIndex = 9;
             this.label5.Text = "Taxpayer age";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,10 +197,10 @@
             // txtAge
             // 
             this.txtAge.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.Location = new System.Drawing.Point(315, 12);
+            this.txtAge.Location = new System.Drawing.Point(204, 16);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(211, 26);
-            this.txtAge.TabIndex = 0;
+            this.txtAge.TabIndex = 11;
             this.txtAge.Text = "18";
             this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAge.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -204,10 +210,10 @@
             // 
             // rdSpecifySalary
             // 
-            this.rdSpecifySalary.Location = new System.Drawing.Point(532, 44);
+            this.rdSpecifySalary.Location = new System.Drawing.Point(373, 16);
             this.rdSpecifySalary.Name = "rdSpecifySalary";
             this.rdSpecifySalary.Size = new System.Drawing.Size(203, 26);
-            this.rdSpecifySalary.TabIndex = 7;
+            this.rdSpecifySalary.TabIndex = 34;
             this.rdSpecifySalary.Tag = "A";
             this.rdSpecifySalary.Text = "Specify this";
             this.rdSpecifySalary.UseVisualStyleBackColor = true;
@@ -215,10 +221,10 @@
             // 
             // rdSpecifyPayout
             // 
-            this.rdSpecifyPayout.Location = new System.Drawing.Point(532, 108);
+            this.rdSpecifyPayout.Location = new System.Drawing.Point(373, 80);
             this.rdSpecifyPayout.Name = "rdSpecifyPayout";
             this.rdSpecifyPayout.Size = new System.Drawing.Size(203, 26);
-            this.rdSpecifyPayout.TabIndex = 8;
+            this.rdSpecifyPayout.TabIndex = 36;
             this.rdSpecifyPayout.Tag = "A";
             this.rdSpecifyPayout.Text = "Specify this";
             this.rdSpecifyPayout.UseVisualStyleBackColor = true;
@@ -227,9 +233,9 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 274);
+            this.label6.Location = new System.Drawing.Point(12, 207);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(297, 26);
+            this.label6.Size = new System.Drawing.Size(141, 26);
             this.label6.TabIndex = 12;
             this.label6.Text = "Basic Salary";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -238,7 +244,7 @@
             // 
             this.txtResultBasic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultBasic.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBasic.Location = new System.Drawing.Point(315, 281);
+            this.txtResultBasic.Location = new System.Drawing.Point(159, 214);
             this.txtResultBasic.Name = "txtResultBasic";
             this.txtResultBasic.ReadOnly = true;
             this.txtResultBasic.Size = new System.Drawing.Size(211, 19);
@@ -250,9 +256,9 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 375);
+            this.label7.Location = new System.Drawing.Point(12, 308);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(297, 26);
+            this.label7.Size = new System.Drawing.Size(141, 26);
             this.label7.TabIndex = 12;
             this.label7.Text = "Medical Aid";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -261,7 +267,7 @@
             // 
             this.txtResultMedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultMedical.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultMedical.Location = new System.Drawing.Point(315, 382);
+            this.txtResultMedical.Location = new System.Drawing.Point(159, 315);
             this.txtResultMedical.Name = "txtResultMedical";
             this.txtResultMedical.ReadOnly = true;
             this.txtResultMedical.Size = new System.Drawing.Size(211, 19);
@@ -273,9 +279,9 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 400);
+            this.label8.Location = new System.Drawing.Point(12, 333);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(297, 26);
+            this.label8.Size = new System.Drawing.Size(141, 26);
             this.label8.TabIndex = 12;
             this.label8.Text = "Number of Dependents";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -284,7 +290,7 @@
             // 
             this.txtResultDependents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultDependents.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultDependents.Location = new System.Drawing.Point(315, 407);
+            this.txtResultDependents.Location = new System.Drawing.Point(159, 340);
             this.txtResultDependents.Name = "txtResultDependents";
             this.txtResultDependents.ReadOnly = true;
             this.txtResultDependents.Size = new System.Drawing.Size(211, 19);
@@ -295,9 +301,9 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(12, 453);
+            this.label9.Location = new System.Drawing.Point(12, 386);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(297, 26);
+            this.label9.Size = new System.Drawing.Size(141, 26);
             this.label9.TabIndex = 12;
             this.label9.Text = "Base PAYE";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -306,7 +312,7 @@
             // 
             this.txtResultBasePaye.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultBasePaye.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBasePaye.Location = new System.Drawing.Point(315, 457);
+            this.txtResultBasePaye.Location = new System.Drawing.Point(159, 390);
             this.txtResultBasePaye.Name = "txtResultBasePaye";
             this.txtResultBasePaye.ReadOnly = true;
             this.txtResultBasePaye.Size = new System.Drawing.Size(211, 19);
@@ -317,9 +323,9 @@
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(12, 479);
+            this.label10.Location = new System.Drawing.Point(12, 412);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(297, 26);
+            this.label10.Size = new System.Drawing.Size(141, 26);
             this.label10.TabIndex = 12;
             this.label10.Text = "Primary Rebate";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -328,7 +334,7 @@
             // 
             this.txtResultPrimaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultPrimaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultPrimaryRebate.Location = new System.Drawing.Point(315, 483);
+            this.txtResultPrimaryRebate.Location = new System.Drawing.Point(159, 416);
             this.txtResultPrimaryRebate.Name = "txtResultPrimaryRebate";
             this.txtResultPrimaryRebate.ReadOnly = true;
             this.txtResultPrimaryRebate.Size = new System.Drawing.Size(211, 19);
@@ -340,9 +346,9 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 583);
+            this.label11.Location = new System.Drawing.Point(12, 516);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(297, 26);
+            this.label11.Size = new System.Drawing.Size(141, 26);
             this.label11.TabIndex = 12;
             this.label11.Text = "Medical Aid Tax Credit";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -351,7 +357,7 @@
             // 
             this.txtResultMedicalTaxCredit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultMedicalTaxCredit.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultMedicalTaxCredit.Location = new System.Drawing.Point(315, 590);
+            this.txtResultMedicalTaxCredit.Location = new System.Drawing.Point(159, 523);
             this.txtResultMedicalTaxCredit.Name = "txtResultMedicalTaxCredit";
             this.txtResultMedicalTaxCredit.ReadOnly = true;
             this.txtResultMedicalTaxCredit.Size = new System.Drawing.Size(211, 19);
@@ -363,9 +369,9 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 609);
+            this.label12.Location = new System.Drawing.Point(12, 542);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(297, 26);
+            this.label12.Size = new System.Drawing.Size(141, 26);
             this.label12.TabIndex = 12;
             this.label12.Text = "Employee UIF";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -374,7 +380,7 @@
             // 
             this.txtResultEmployeeUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultEmployeeUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultEmployeeUif.Location = new System.Drawing.Point(315, 616);
+            this.txtResultEmployeeUif.Location = new System.Drawing.Point(159, 549);
             this.txtResultEmployeeUif.Name = "txtResultEmployeeUif";
             this.txtResultEmployeeUif.ReadOnly = true;
             this.txtResultEmployeeUif.Size = new System.Drawing.Size(211, 19);
@@ -386,9 +392,9 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 635);
+            this.label13.Location = new System.Drawing.Point(12, 568);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(297, 26);
+            this.label13.Size = new System.Drawing.Size(141, 26);
             this.label13.TabIndex = 12;
             this.label13.Text = "Total Deductions";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -397,7 +403,7 @@
             // 
             this.txtResultDeductions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultDeductions.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultDeductions.Location = new System.Drawing.Point(315, 642);
+            this.txtResultDeductions.Location = new System.Drawing.Point(159, 575);
             this.txtResultDeductions.Name = "txtResultDeductions";
             this.txtResultDeductions.ReadOnly = true;
             this.txtResultDeductions.Size = new System.Drawing.Size(211, 19);
@@ -409,9 +415,9 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 671);
+            this.label14.Location = new System.Drawing.Point(12, 604);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(297, 26);
+            this.label14.Size = new System.Drawing.Size(141, 26);
             this.label14.TabIndex = 12;
             this.label14.Text = "Total Payout";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -420,7 +426,7 @@
             // 
             this.txtResultPayout.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultPayout.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultPayout.Location = new System.Drawing.Point(315, 678);
+            this.txtResultPayout.Location = new System.Drawing.Point(159, 611);
             this.txtResultPayout.Name = "txtResultPayout";
             this.txtResultPayout.ReadOnly = true;
             this.txtResultPayout.Size = new System.Drawing.Size(211, 19);
@@ -431,9 +437,9 @@
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(12, 793);
+            this.label15.Location = new System.Drawing.Point(12, 726);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(297, 26);
+            this.label15.Size = new System.Drawing.Size(141, 26);
             this.label15.TabIndex = 12;
             this.label15.Text = "Total Taxes";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -442,7 +448,7 @@
             // 
             this.txtResultTaxes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTaxes.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTaxes.Location = new System.Drawing.Point(315, 797);
+            this.txtResultTaxes.Location = new System.Drawing.Point(159, 730);
             this.txtResultTaxes.Name = "txtResultTaxes";
             this.txtResultTaxes.ReadOnly = true;
             this.txtResultTaxes.Size = new System.Drawing.Size(211, 19);
@@ -456,11 +462,11 @@
             this.txtErrors.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtErrors.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtErrors.ForeColor = System.Drawing.Color.Red;
-            this.txtErrors.Location = new System.Drawing.Point(0, 871);
+            this.txtErrors.Location = new System.Drawing.Point(0, 760);
             this.txtErrors.Multiline = true;
             this.txtErrors.Name = "txtErrors";
             this.txtErrors.ReadOnly = true;
-            this.txtErrors.Size = new System.Drawing.Size(928, 58);
+            this.txtErrors.Size = new System.Drawing.Size(1087, 58);
             this.txtErrors.TabIndex = 14;
             this.txtErrors.TabStop = false;
             // 
@@ -468,7 +474,7 @@
             // 
             this.txtResultTotalPaye.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTotalPaye.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTotalPaye.Location = new System.Drawing.Point(315, 771);
+            this.txtResultTotalPaye.Location = new System.Drawing.Point(159, 704);
             this.txtResultTotalPaye.Name = "txtResultTotalPaye";
             this.txtResultTotalPaye.ReadOnly = true;
             this.txtResultTotalPaye.Size = new System.Drawing.Size(211, 19);
@@ -479,18 +485,18 @@
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(12, 767);
+            this.label16.Location = new System.Drawing.Point(12, 700);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(297, 26);
+            this.label16.Size = new System.Drawing.Size(141, 26);
             this.label16.TabIndex = 15;
             this.label16.Text = "Total PAYE";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(12, 140);
+            this.label17.Location = new System.Drawing.Point(12, 112);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(297, 26);
+            this.label17.Size = new System.Drawing.Size(138, 26);
             this.label17.TabIndex = 18;
             this.label17.Text = "Bonus";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -498,10 +504,10 @@
             // txtBonus
             // 
             this.txtBonus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus.Location = new System.Drawing.Point(315, 140);
+            this.txtBonus.Location = new System.Drawing.Point(156, 112);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.Size = new System.Drawing.Size(211, 26);
-            this.txtBonus.TabIndex = 3;
+            this.txtBonus.TabIndex = 38;
             this.txtBonus.Text = "0";
             this.txtBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBonus.TextChanged += new System.EventHandler(this.SomethingChanged);
@@ -513,7 +519,7 @@
             // 
             this.txtResultBonus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultBonus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultBonus.Location = new System.Drawing.Point(315, 307);
+            this.txtResultBonus.Location = new System.Drawing.Point(159, 240);
             this.txtResultBonus.Name = "txtResultBonus";
             this.txtResultBonus.ReadOnly = true;
             this.txtResultBonus.Size = new System.Drawing.Size(211, 19);
@@ -525,9 +531,9 @@
             // label18
             // 
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(12, 300);
+            this.label18.Location = new System.Drawing.Point(12, 233);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(297, 26);
+            this.label18.Size = new System.Drawing.Size(141, 26);
             this.label18.TabIndex = 19;
             this.label18.Text = "Bonus";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -536,7 +542,7 @@
             // 
             this.txtResultEarnings.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultEarnings.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultEarnings.Location = new System.Drawing.Point(315, 331);
+            this.txtResultEarnings.Location = new System.Drawing.Point(159, 264);
             this.txtResultEarnings.Name = "txtResultEarnings";
             this.txtResultEarnings.ReadOnly = true;
             this.txtResultEarnings.Size = new System.Drawing.Size(211, 19);
@@ -548,9 +554,9 @@
             // label19
             // 
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(12, 326);
+            this.label19.Location = new System.Drawing.Point(12, 259);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(297, 26);
+            this.label19.Size = new System.Drawing.Size(141, 26);
             this.label19.TabIndex = 21;
             this.label19.Text = "Earnings";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -560,10 +566,10 @@
             this.chkBenefitsIncluded.AutoSize = true;
             this.chkBenefitsIncluded.Checked = true;
             this.chkBenefitsIncluded.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBenefitsIncluded.Location = new System.Drawing.Point(684, 49);
+            this.chkBenefitsIncluded.Location = new System.Drawing.Point(452, 21);
             this.chkBenefitsIncluded.Name = "chkBenefitsIncluded";
             this.chkBenefitsIncluded.Size = new System.Drawing.Size(166, 17);
-            this.chkBenefitsIncluded.TabIndex = 9;
+            this.chkBenefitsIncluded.TabIndex = 37;
             this.chkBenefitsIncluded.Text = "This number includes benefits";
             this.chkBenefitsIncluded.UseVisualStyleBackColor = true;
             this.chkBenefitsIncluded.CheckedChanged += new System.EventHandler(this.SomethingChanged);
@@ -572,7 +578,7 @@
             // 
             this.txtResultTotalUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTotalUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTotalUif.Location = new System.Drawing.Point(315, 745);
+            this.txtResultTotalUif.Location = new System.Drawing.Point(159, 678);
             this.txtResultTotalUif.Name = "txtResultTotalUif";
             this.txtResultTotalUif.ReadOnly = true;
             this.txtResultTotalUif.Size = new System.Drawing.Size(211, 19);
@@ -583,9 +589,9 @@
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(12, 741);
+            this.label20.Location = new System.Drawing.Point(12, 674);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(297, 26);
+            this.label20.Size = new System.Drawing.Size(141, 26);
             this.label20.TabIndex = 24;
             this.label20.Text = "Total UIF";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -594,7 +600,7 @@
             // 
             this.txtResultSecondaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultSecondaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultSecondaryRebate.Location = new System.Drawing.Point(315, 509);
+            this.txtResultSecondaryRebate.Location = new System.Drawing.Point(159, 442);
             this.txtResultSecondaryRebate.Name = "txtResultSecondaryRebate";
             this.txtResultSecondaryRebate.ReadOnly = true;
             this.txtResultSecondaryRebate.Size = new System.Drawing.Size(211, 19);
@@ -605,9 +611,9 @@
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(12, 505);
+            this.label21.Location = new System.Drawing.Point(12, 438);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(297, 26);
+            this.label21.Size = new System.Drawing.Size(141, 26);
             this.label21.TabIndex = 26;
             this.label21.Text = "Secondary Rebate";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -616,7 +622,7 @@
             // 
             this.txtResultTertiaryRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultTertiaryRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultTertiaryRebate.Location = new System.Drawing.Point(315, 535);
+            this.txtResultTertiaryRebate.Location = new System.Drawing.Point(159, 468);
             this.txtResultTertiaryRebate.Name = "txtResultTertiaryRebate";
             this.txtResultTertiaryRebate.ReadOnly = true;
             this.txtResultTertiaryRebate.Size = new System.Drawing.Size(211, 19);
@@ -627,9 +633,9 @@
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(12, 531);
+            this.label22.Location = new System.Drawing.Point(12, 464);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(297, 26);
+            this.label22.Size = new System.Drawing.Size(141, 26);
             this.label22.TabIndex = 28;
             this.label22.Text = "Tertiary Rebate";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -638,7 +644,7 @@
             // 
             this.txtResultPayeLessRebate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultPayeLessRebate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultPayeLessRebate.Location = new System.Drawing.Point(315, 564);
+            this.txtResultPayeLessRebate.Location = new System.Drawing.Point(159, 497);
             this.txtResultPayeLessRebate.Name = "txtResultPayeLessRebate";
             this.txtResultPayeLessRebate.ReadOnly = true;
             this.txtResultPayeLessRebate.Size = new System.Drawing.Size(211, 19);
@@ -650,9 +656,9 @@
             // label23
             // 
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(12, 557);
+            this.label23.Location = new System.Drawing.Point(12, 490);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(297, 26);
+            this.label23.Size = new System.Drawing.Size(141, 26);
             this.label23.TabIndex = 30;
             this.label23.Text = "PAYE Less Rebate";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -661,7 +667,7 @@
             // 
             this.txtResultEmployerUif.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtResultEmployerUif.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultEmployerUif.Location = new System.Drawing.Point(315, 719);
+            this.txtResultEmployerUif.Location = new System.Drawing.Point(159, 652);
             this.txtResultEmployerUif.Name = "txtResultEmployerUif";
             this.txtResultEmployerUif.ReadOnly = true;
             this.txtResultEmployerUif.Size = new System.Drawing.Size(211, 19);
@@ -672,9 +678,9 @@
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(12, 715);
+            this.label24.Location = new System.Drawing.Point(12, 648);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(297, 26);
+            this.label24.Size = new System.Drawing.Size(141, 26);
             this.label24.TabIndex = 32;
             this.label24.Text = "Employer UIF";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -683,17 +689,17 @@
             // 
             this.cmbTaxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTaxYear.FormattingEnabled = true;
-            this.cmbTaxYear.Location = new System.Drawing.Point(315, 252);
+            this.cmbTaxYear.Location = new System.Drawing.Point(204, 50);
             this.cmbTaxYear.Name = "cmbTaxYear";
             this.cmbTaxYear.Size = new System.Drawing.Size(211, 21);
-            this.cmbTaxYear.TabIndex = 6;
+            this.cmbTaxYear.TabIndex = 12;
             this.cmbTaxYear.SelectedIndexChanged += new System.EventHandler(this.SomethingChanged);
             // 
             // label25
             // 
-            this.label25.Location = new System.Drawing.Point(12, 248);
+            this.label25.Location = new System.Drawing.Point(6, 50);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(297, 26);
+            this.label25.Size = new System.Drawing.Size(192, 26);
             this.label25.TabIndex = 35;
             this.label25.Text = "Tax Year";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -701,10 +707,10 @@
             // rdTotalCostToCompany
             // 
             this.rdTotalCostToCompany.Checked = true;
-            this.rdTotalCostToCompany.Location = new System.Drawing.Point(532, 76);
+            this.rdTotalCostToCompany.Location = new System.Drawing.Point(373, 48);
             this.rdTotalCostToCompany.Name = "rdTotalCostToCompany";
             this.rdTotalCostToCompany.Size = new System.Drawing.Size(203, 26);
-            this.rdTotalCostToCompany.TabIndex = 38;
+            this.rdTotalCostToCompany.TabIndex = 35;
             this.rdTotalCostToCompany.TabStop = true;
             this.rdTotalCostToCompany.Tag = "A";
             this.rdTotalCostToCompany.Text = "Specify this";
@@ -713,9 +719,9 @@
             // 
             // label26
             // 
-            this.label26.Location = new System.Drawing.Point(12, 76);
+            this.label26.Location = new System.Drawing.Point(6, 48);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(297, 26);
+            this.label26.Size = new System.Drawing.Size(144, 26);
             this.label26.TabIndex = 37;
             this.label26.Text = "Total cost to company (TCC)";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -723,24 +729,72 @@
             // txtTotalCostToCompany
             // 
             this.txtTotalCostToCompany.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCostToCompany.Location = new System.Drawing.Point(315, 76);
+            this.txtTotalCostToCompany.Location = new System.Drawing.Point(156, 48);
             this.txtTotalCostToCompany.Name = "txtTotalCostToCompany";
             this.txtTotalCostToCompany.Size = new System.Drawing.Size(211, 26);
-            this.txtTotalCostToCompany.TabIndex = 36;
+            this.txtTotalCostToCompany.TabIndex = 32;
             this.txtTotalCostToCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotalCostToCompany.TextChanged += new System.EventHandler(this.SomethingChanged);
+            // 
+            // gbxRemuneration
+            // 
+            this.gbxRemuneration.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxRemuneration.Controls.Add(this.chkBenefitsIncluded);
+            this.gbxRemuneration.Controls.Add(this.txtSalary);
+            this.gbxRemuneration.Controls.Add(this.rdTotalCostToCompany);
+            this.gbxRemuneration.Controls.Add(this.label1);
+            this.gbxRemuneration.Controls.Add(this.label26);
+            this.gbxRemuneration.Controls.Add(this.txtPayout);
+            this.gbxRemuneration.Controls.Add(this.txtTotalCostToCompany);
+            this.gbxRemuneration.Controls.Add(this.label2);
+            this.gbxRemuneration.Controls.Add(this.rdSpecifySalary);
+            this.gbxRemuneration.Controls.Add(this.rdSpecifyPayout);
+            this.gbxRemuneration.Controls.Add(this.txtBonus);
+            this.gbxRemuneration.Controls.Add(this.label17);
+            this.gbxRemuneration.Location = new System.Drawing.Point(451, 12);
+            this.gbxRemuneration.Name = "gbxRemuneration";
+            this.gbxRemuneration.Size = new System.Drawing.Size(626, 192);
+            this.gbxRemuneration.TabIndex = 30;
+            this.gbxRemuneration.TabStop = false;
+            this.gbxRemuneration.Text = "Remuneration";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtMedicalAid);
+            this.groupBox2.Controls.Add(this.txtDependents);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 103);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(433, 101);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Medical Aid";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtAge);
+            this.groupBox1.Controls.Add(this.cmbTaxYear);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(433, 85);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Taxes";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(928, 929);
-            this.Controls.Add(this.rdTotalCostToCompany);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.txtTotalCostToCompany);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.cmbTaxYear);
+            this.ClientSize = new System.Drawing.Size(1087, 818);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbxRemuneration);
             this.Controls.Add(this.txtResultEmployerUif);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.txtResultPayeLessRebate);
@@ -751,13 +805,10 @@
             this.Controls.Add(this.label21);
             this.Controls.Add(this.txtResultTotalUif);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.chkBenefitsIncluded);
             this.Controls.Add(this.txtResultEarnings);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtResultBonus);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.txtBonus);
             this.Controls.Add(this.txtResultTotalPaye);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtErrors);
@@ -781,21 +832,15 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtResultBasic);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.rdSpecifyPayout);
-            this.Controls.Add(this.rdSpecifySalary);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtAge);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDependents);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtMedicalAid);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPayout);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSalary);
             this.Name = "MainForm";
             this.Text = "SARS Thing";
             this.Load += new System.EventHandler(this.FormLoad);
+            this.gbxRemuneration.ResumeLayout(false);
+            this.gbxRemuneration.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -860,6 +905,9 @@
         private System.Windows.Forms.RadioButton rdTotalCostToCompany;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtTotalCostToCompany;
+        private System.Windows.Forms.GroupBox gbxRemuneration;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

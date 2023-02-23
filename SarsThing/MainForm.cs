@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,8 +16,10 @@ namespace SarsThing
     public partial class MainForm : Form
     {
         private bool recurseProtect = false;
+        private readonly TextBox[] controls;
 
         private Dictionary<int, CalculationParameters> TaxYears { get; }
+
         private int SelectedTaxYear =>
             cmbTaxYear.SelectedItem is int
             ? (int)cmbTaxYear.SelectedItem
@@ -30,15 +33,37 @@ namespace SarsThing
         {
             InitializeComponent();
 
+            controls = typeof(MainForm).GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
+                .Where(x => typeof(TextBox).IsAssignableFrom(x.FieldType))
+                .Select(x => x.GetValue(this))
+                .Where(x => x != null)
+                .Cast<TextBox>()
+                .ToArray();
+
             TaxYears = CalculationParameters.AllYears.ToDictionary(x => x.Year);
 
             cmbTaxYear.Items.AddRange(CalculationParameters.AllYears
                 .Select(x => x.Year)
                 .OrderBy(x => x)
-                .Cast<Object>()
+                .Cast<object>()
                 .ToArray());
 
-            cmbTaxYear.SelectedIndex = cmbTaxYear.Items.Count - 1;
+            cmbTaxYear.SelectedIndex = cmbTaxYear.Items.IndexOf(GetCurrentTaxYear());
+
+            Shown += MainForm_Shown;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            txtTotalCostToCompany.Focus();
+        }
+
+
+        private int GetCurrentTaxYear()
+        {
+            var now = DateTime.Now;
+            if (now.Month < 3) return now.Year;
+            else return now.Year + 1;
         }
 
         private void CalculateCheckedChanged(object sender, EventArgs e)
@@ -156,13 +181,11 @@ namespace SarsThing
             if (iDependents == 0) dMedicalAid = 0;
 
             badControls.ForEach(MakeBad);
-            foreach(var ctl in Controls.Cast<Control>()
-                .Where(x=>x is TextBox)
-                .Except(badControls))
+            foreach (var ctl in controls.Except(badControls))
             {
                 MakeGood(ctl);
             }
-            
+
             CalculationResults result = null;
 
             if (errors.Count == 0)
